@@ -6,7 +6,7 @@ data <- read.table("household_power_consumption.txt", sep=";", header = TRUE)# H
 DataToUSE<-data[66637:69516,]#Selecting data thrugh 1/2/2007 to 2/2/2007
 
 #Transform to Kilowatts Global active power
-DataToUSE[, "GlobalActivePowerKwatts"] <- as.numeric(DataToUSE[, "Global_active_power"]) /1000
+DataToUSE[, "GlobalActivePowerKwatts"] <- as.numeric(as.character(DataToUSE[, "Global_active_power"])) /1000
 
 #Choosing my graphic device and save it as "Plot1.png" in my working directory
 png(filename = "Plot1.png", width = 480, height = 480, units = 'px')
